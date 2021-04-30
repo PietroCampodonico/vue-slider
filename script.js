@@ -29,9 +29,17 @@ const app = new Vue ({
             }
         },
 
-        onDotClick: function() {
-            return index = this.activeImage
+        keySlideLeft: function () {
+            if (e.keycode == 37) {
+                return this.activeImage--
+            }
+            
+        },
 
+        onDotClick: function(index) {
+            this.activeImage = index
+
+            return this.activeImage
         }
     }
 })
