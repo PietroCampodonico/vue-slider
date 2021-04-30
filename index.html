@@ -7,27 +7,37 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
     <title>Document</title>
 </head>
 <body>
-    <div class="wrapper">
-
+    <div class="wrapper" id="root">
+        
         <div id="caroselContainer">
             <aside>
                 <i class="arrow fas fa-chevron-left"></i> 
             </aside>
             
-            <div class="img-container"></div>
-    
+            <div class="img-container">
+                
+                <img :src="images.img1" alt="">
+                
+                <div class="dot-container">
+                    <div class="dot" v-for="(img, index) in images" @click="onDotClick(img)"></div>
+                </div>
+                
+            </div>
+            
             <aside>
                 <i class="arrow fas fa-chevron-right"></i>
             </aside> 
-    
+            
         </div>
-
+        
     </div>
-
-
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
