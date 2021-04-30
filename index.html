@@ -15,21 +15,21 @@
         
         <div id="caroselContainer">
             <aside>
-                <i class="arrow fas fa-chevron-left"></i> 
+                <i class="arrow fas fa-chevron-left" @click="slideLeft()"></i> 
             </aside>
             
             <div class="img-container">
                 
-                <img :src="images.img1" alt="">
+                <img :src="images[activeImage]" alt="">
                 
                 <div class="dot-container">
-                    <div class="dot" v-for="(img, index) in images" @click="onDotClick(img)"></div>
+                    <div class="dot" v-for="(img, index) in images" @click="onDotClick(index)"></div>
                 </div>
                 
             </div>
             
             <aside>
-                <i class="arrow fas fa-chevron-right"></i>
+                <i class="arrow fas fa-chevron-right" @click="slideRight(activeImage)"></i>
             </aside> 
             
         </div>
