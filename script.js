@@ -10,10 +10,11 @@ const app = new Vue ({
             "img/tulipani_1280.jpg",
         ],
         activeImage: 0,
+        dotStyles: "",
     },
     methods: {
         slideRight: function (){
-            if (this.activeImage == this.images.length-1) {
+            if (this.activeImage == this.images.length - 1) {
                 return this.activeImage = 0
             } else {
                 return this.activeImage++
@@ -21,25 +22,35 @@ const app = new Vue ({
         },
 
         slideLeft: function () {
-
             if (this.activeImage == 0) {
-                return this.activeImage = 4
+                return this.activeImage = this.images.length - 1
             } else {
                 return this.activeImage--
             }
         },
 
-        keySlideLeft: function () {
-            if (e.keycode == 37) {
-                return this.activeImage--
-            }
-            
-        },
-
         onDotClick: function(index) {
             this.activeImage = index
-
             return this.activeImage
+        },
+
+        dotStyleSetter(index) {
+            if (this.activeImage == index) {
+                return this.dotStyles = "activeDot"
+            }
+        },
+
+//NOT WORKING. DEPRECATED?
+
+        keySlide: function (event) {
+            if (event.key == ArrowLeft) {
+                return slideLeft()
+            }   
+            
+            if (event.key == ArrowRight) {
+                return slideRight()
+            }
         }
-    }
-})
+    }   
+})  
+

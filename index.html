@@ -7,37 +7,31 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+
     
-    <title>Document</title>
+    <title>Carosel</title>
 </head>
 <body>
+
     <div class="wrapper" id="root">
-        
         <div id="caroselContainer">
             <aside>
                 <i class="arrow fas fa-chevron-left" @click="slideLeft()"></i> 
             </aside>
-            
             <div class="img-container">
-                
                 <img :src="images[activeImage]" alt="">
-                
                 <div class="dot-container">
-                    <div class="dot" v-for="(img, index) in images" @click="onDotClick(index)"></div>
+                    <div class="dot" v-for="(img, index) in images" @click="onDotClick(index)" :class="dotStyleSetter(index)"></div>
                 </div>
-                
-            </div>
-            
+            </div>  
             <aside>
                 <i class="arrow fas fa-chevron-right" @click="slideRight(activeImage)"></i>
             </aside> 
-            
+
         </div>
-        
     </div>
     
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
