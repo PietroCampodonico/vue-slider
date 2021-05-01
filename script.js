@@ -11,7 +11,8 @@ const app = new Vue ({
         ],
         activeImage: 0,
         dotStyles: "",
-        reelMessage: "Start Showreel"
+        reelMessage: "Start Showreel",
+        stopReel: false,
     },
     methods: {
         slideRight: function (){
