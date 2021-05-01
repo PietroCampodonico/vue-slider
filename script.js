@@ -11,6 +11,7 @@ const app = new Vue ({
         ],
         activeImage: 0,
         dotStyles: "",
+        reelMessage: "Start Showreel"
     },
     methods: {
         slideRight: function (){
@@ -40,8 +41,11 @@ const app = new Vue ({
             }
         },
 
-//NOT WORKING. DEPRECATED?
+        autoReel: function () {
+            setInterval(this.slideRight, 3000);
+        },  
 
+//NOT WORKING. DEPRECATED?
         keySlide: function (event) {
             if (event.key == ArrowLeft) {
                 return slideLeft()
