@@ -15,7 +15,8 @@
 <body>
 
     <div class="wrapper" id="root">
-        <div id="caroselContainer">
+
+        <div id="caroselContainer" tabindex="-1" @keyup.left="slideLeft()" @keyup.right="slideRight()">
             <aside>
                 <i class="arrow fas fa-chevron-left" @click="slideLeft()"></i> 
             </aside>

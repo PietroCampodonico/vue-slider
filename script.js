@@ -14,6 +14,11 @@ const app = new Vue ({
         reelMessage: "Start Showreel",
         stopReel: false,
     },
+
+    mounted() {
+        document.querySelector("#caroselContainer").focus().innerHTML;
+    },
+
     methods: {
         slideRight: function (){
             if (this.activeImage == this.images.length - 1) {
@@ -45,17 +50,6 @@ const app = new Vue ({
         autoReel: function () {
             setInterval(this.slideRight, 3000);
         },  
-
-//NOT WORKING. DEPRECATED?
-        keySlide: function (event) {
-            if (event.key == ArrowLeft) {
-                return slideLeft()
-            }   
-            
-            if (event.key == ArrowRight) {
-                return slideRight()
-            }
-        }
     }   
 })  
 
