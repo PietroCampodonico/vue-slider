@@ -92,3 +92,7 @@ button:focus {
     background-color: rgb(155, 101, 2);
 }
 
+#caroselContainer:focus,
+#caroselContainer:active {
+    outline: none
+}
