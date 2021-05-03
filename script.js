@@ -16,7 +16,7 @@ const app = new Vue ({
     },
 
     mounted() {
-        document.querySelector("#caroselContainer").focus().innerHTML;
+        document.querySelector("#caroselContainer").focus();
     },
 
     methods: {
