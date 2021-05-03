@@ -12,7 +12,7 @@ const app = new Vue ({
         activeImage: 0,
         dotStyles: "",
         reelMessage: "Start Showreel",
-        stopReel: false,
+        //stopReel: false,
     },
 
     mounted() {
